@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import java.time.LocalDate
 import java.util.UUID
 import java.util.stream.Collectors
 
@@ -25,9 +26,22 @@ class CreditResource(
 ) {
   @PostMapping
   fun saveCredit(@RequestBody @Valid creditDto: CreditDto): ResponseEntity<String> {
-    val credit: Credit = this.creditService.save(creditDto.toEntity())
+    val credit: Credit = creditDto.toEntity()
+    val currentDate = LocalDate.now()
+    val monthFirstInstallment = credit.dayFirstInstallment
+
+    if(credit.numberOfInstallments > 48) {
+      return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("the maximum installments allowed is 48")
+    }
+
+    if(monthFirstInstallment < currentDate.plusMonths(3)) {
+      return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body("The date of the first installment must be a maximum of 3 months after the current day")
+    }
+
+    val newCredit: Credit = this.creditService.save(creditDto.toEntity())
+
     return ResponseEntity.status(HttpStatus.CREATED)
-      .body("Credit ${credit.creditCode} - Customer ${credit.customer?.firstName} saved")
+      .body("Credit ${newCredit.creditCode} - Customer ${newCredit.customer?.firstName} saved")
   }
 
   @GetMapping
