@@ -1,7 +1,7 @@
 package me.dio.credit.application.system.entity
 
 import jakarta.persistence.*
-import me.dio.credit.application.system.enummeration.Status
+import me.dio.credit.application.system.entity.enummeration.Status
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.util.UUID

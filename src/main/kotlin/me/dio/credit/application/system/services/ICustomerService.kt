@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.service
+package me.dio.credit.application.system.services
 
 import me.dio.credit.application.system.entity.Customer
 

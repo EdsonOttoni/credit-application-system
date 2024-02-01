@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.exception
+package me.dio.credit.application.system.shared.exception
 
 import jdk.jfr.Timespan
 import java.time.LocalDate

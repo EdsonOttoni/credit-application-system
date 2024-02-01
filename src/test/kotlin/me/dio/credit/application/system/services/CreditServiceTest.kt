@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.service
+package me.dio.credit.application.system.services
 
 import io.mockk.*
 import io.mockk.impl.annotations.InjectMockKs
@@ -6,10 +6,10 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import me.dio.credit.application.system.entity.Credit
 import me.dio.credit.application.system.entity.Customer
-import me.dio.credit.application.system.exception.BusinessException
+import me.dio.credit.application.system.shared.exception.BusinessException
 import me.dio.credit.application.system.repositories.CreditRepository
-import me.dio.credit.application.system.service.impl.CreditService
-import me.dio.credit.application.system.service.impl.CustomerService
+import me.dio.credit.application.system.services.impl.CreditService
+import me.dio.credit.application.system.services.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach

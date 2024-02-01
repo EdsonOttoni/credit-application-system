@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.modules.http.controller
+package me.dio.credit.application.system.modules.http.controllers
 
 import jakarta.validation.Valid
 import me.dio.credit.application.system.dto.request.CreditDto

@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.service
+package me.dio.credit.application.system.services
 
 
 import io.mockk.every
@@ -10,9 +10,9 @@ import io.mockk.runs
 import io.mockk.verify
 import me.dio.credit.application.system.entity.Address
 import me.dio.credit.application.system.entity.Customer
-import me.dio.credit.application.system.exception.BusinessException
+import me.dio.credit.application.system.shared.exception.BusinessException
 import me.dio.credit.application.system.repositories.CustomerRepository
-import me.dio.credit.application.system.service.impl.CustomerService
+import me.dio.credit.application.system.services.impl.CustomerService
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

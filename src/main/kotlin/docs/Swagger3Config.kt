@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.config
+package docs
 
 import org.springdoc.core.models.GroupedOpenApi
 import org.springframework.context.annotation.Bean

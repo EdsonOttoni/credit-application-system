@@ -1,4 +1,4 @@
-package me.dio.credit.application.system.exception
+package me.dio.credit.application.system.shared.exception
 
 import org.springframework.dao.DataAccessException
 import org.springframework.http.HttpStatus
