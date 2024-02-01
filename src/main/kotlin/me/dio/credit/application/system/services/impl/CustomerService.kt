@@ -10,11 +10,12 @@ class CustomerService(
   private val customerRepository: CustomerRepository
 ) : ICustomerService {
   override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
+  override fun findByEmail(email: String): Customer =
+    this.customerRepository.findByEmail(email) ?: throw RuntimeException("User not found")
 
   override fun findById(id: Long): Customer = this.customerRepository.findById(id).orElseThrow {
     throw RuntimeException("Id $id not found")
   }
-
 
   override fun delete(id: Long) {
     val customer: Customer = this.findById(id)

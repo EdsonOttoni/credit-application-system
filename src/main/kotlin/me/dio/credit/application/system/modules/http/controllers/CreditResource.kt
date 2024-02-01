@@ -1,11 +1,11 @@
-package me.dio.credit.application.system.controller
+package me.dio.credit.application.system.modules.http.controller
 
 import jakarta.validation.Valid
 import me.dio.credit.application.system.dto.request.CreditDto
 import me.dio.credit.application.system.dto.response.CreditView
 import me.dio.credit.application.system.dto.response.CreditViewList
 import me.dio.credit.application.system.entity.Credit
-import me.dio.credit.application.system.service.impl.CreditService
+import me.dio.credit.application.system.services.impl.CreditService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
